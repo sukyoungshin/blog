@@ -6,8 +6,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html,
-  body,
-  #__next {
+  body {
     padding: 0;
     margin: 0;
     width: 100%;
@@ -15,6 +14,15 @@ export const GlobalStyle = createGlobalStyle`
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
       font-size: 62.5%;
+  }
+
+  #__next {
+    padding: 0;
+    margin: 0 auto;
+    width: 390px;
+    min-width: 390px;
+    max-width: 390px;
+    height: 100%;
   }
 
   p, h1, h2, h3, h4, h5, h6 {
