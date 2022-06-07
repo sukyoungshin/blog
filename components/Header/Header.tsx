@@ -20,6 +20,7 @@ const DefaultHeading = () => {
     <StyledHeader>
       <StyledNav>
         <span>로고</span>
+        <h1>로고</h1>
         <Button>로그인</Button>
       </StyledNav>
     </StyledHeader>
