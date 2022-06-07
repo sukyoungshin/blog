@@ -16,7 +16,13 @@ export const StyledButton = styled.button<{
     height: 48px;
   `}
 
-  // button action status
-  color: ${props => props.active? props.theme.colors.NAVY : props.theme.colors.WHITE_200};
-  background-color: ${props => props.active? props.theme.colors.WHITE_200 : props.theme.colors.NAVY};
+  // inactive
+  color: ${(props) => props.theme.colors.NAVY};
+  background-color: ${(props) => props.theme.colors.WHITE_200};
+
+  // active
+  ${(props) => props.active && css`
+    color: ${props.theme.colors.WHITE_200};
+    background-color: ${props.theme.colors.NAVY};  
+  `}
 `;

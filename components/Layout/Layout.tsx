@@ -5,8 +5,6 @@ import Toolbar from "@components/Toolbar/Toolbar";
 
 export const Layout = ({ children }: any): ReactElement => {
 
-  
-
   return (
     <>
       <Header />
