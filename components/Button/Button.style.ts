@@ -1,28 +1,22 @@
 import styled, { css } from "styled-components";
 
 export const StyledButton = styled.button<{
-  cta?: boolean;
+  large?: boolean;
   active?: boolean;
 }>`
-  // common properties
+  // default (small-sized button)
   border: none;
   border-radius: 4px;  
-    
-  // inactive
   width: 88px;
   height: 32px;
-  color: ${props => props.theme.colors.WHITE_200};
-  background-color: ${props => props.theme.colors.NAVY};
-  
-  // active
-  ${props => props.active && css`
-    color: ${props => props.theme.colors.NAVY};
-    background-color: ${props => props.theme.colors.WHITE_200};
-  `}
 
-  // CTA 버튼
-  ${(props) => props.cta && css`
+  // large-sized button
+  ${(props) => props.large && css`
     width: 342px;
     height: 48px;
   `}
+
+  // button action status
+  color: ${props => props.active? props.theme.colors.NAVY : props.theme.colors.WHITE_200};
+  background-color: ${props => props.active? props.theme.colors.WHITE_200 : props.theme.colors.NAVY};
 `;
