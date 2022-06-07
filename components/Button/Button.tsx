@@ -2,14 +2,14 @@ import { StyledButton } from './Button.style';
 
 interface Props {
   children: string;
-  cta?: boolean;
+  large?: boolean;
   active?: boolean;
 }
 
 const Button = ({ children, ...props }: Props) => {
   return (
     <StyledButton 
-      cta={props.cta} 
+      large={props.large} 
       active={props.active}
     >
       {children}
