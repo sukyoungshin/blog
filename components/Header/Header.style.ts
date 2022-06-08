@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { COLOR } from "@styles/color";
 
 export const StyledHeader = styled.header`
   padding: 12px 24px;
@@ -7,7 +6,7 @@ export const StyledHeader = styled.header`
   height: 56px;
   min-height: 56px;
   max-height: 56px;
-  background-color: ${COLOR.WHITE_100};
+  background-color: ${props => props.theme.colors.WHITE_100};
 `;
 
 export const StyledNav = styled.nav`
@@ -22,6 +21,6 @@ export const StyledNav = styled.nav`
   span {
     width: 80px;
     height: 32px;
-    background-color: ${COLOR.WHITE_200};
+    background-color: ${props => props.theme.colors.WHITE_200};
   }
 `;
