@@ -1,6 +1,5 @@
 import { ReactElement, ReactNode } from 'react'
-import { Layout } from '@components/Layout/Layout'
-import Button from '@components/Button/Button'
+import Layout from '@components/Layout/Layout'
 
 const Home = () => {
   return (
@@ -11,7 +10,7 @@ const Home = () => {
 } 
 Home.getLayout = function getLayout(page: ReactElement): ReactNode {
   return (
-    <Layout>
+    <Layout default>
       {page}
     </Layout>
   );
