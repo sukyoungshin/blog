@@ -4,25 +4,14 @@ export const StyledButton = styled.button<{
   large?: boolean;
   active?: boolean;
 }>`
-  // default (small-sized button)
   border: none;
   border-radius: 4px;  
-  width: 88px;
-  height: 32px;
 
-  // large-sized button
-  ${(props) => props.large && css`
-    width: 342px;
-    height: 48px;
-  `}
+  // size
+  width: ${(props) => props.large? '342px' : '88px'};
+  height: ${(props) => props.large? '48px' : '32px'};
 
-  // inactive
-  color: ${(props) => props.theme.colors.NAVY};
-  background-color: ${(props) => props.theme.colors.WHITE_200};
-
-  // active
-  ${(props) => props.active && css`
-    color: ${props.theme.colors.WHITE_200};
-    background-color: ${props.theme.colors.NAVY};  
-  `}
+  // active & inactive
+  color: ${(props) => props.active? props.theme.colors.WHITE_200 : props.theme.colors.NAVY};
+  background-color: ${(props) => props.active? props.theme.colors.NAVY : props.theme.colors.WHITE_200};
 `;
