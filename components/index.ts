@@ -1,13 +1,7 @@
-import Layout from './Layout/Layout';
-import Header from './Header/Header';
-import Toolbar from './Toolbar/Toolbar';
-import Button from './Button/Button';
-import Icon from "./Icon/Icon";
-
-export { 
-  Layout,
-  Header,
-  Toolbar,
-  Button, 
-  Icon 
-};
+export { default as Layout } from './Layout/Layout';
+export { default as Main } from './Main/Main';
+export { default as Header } from './Header/Header';
+export { default as Toolbar } from './Toolbar/Toolbar';
+export { default as Card } from './Card/Card';
+export { default as Button } from './Button/Button';
+export { default as Icon } from './Icon/Icon';

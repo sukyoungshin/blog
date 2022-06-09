@@ -23,10 +23,10 @@ export const StyledIcon = styled.span<{
     border-radius: ${props.size / 2}px;
 
     svg {
-      width: ${props.size-16}px;
-      height: ${props.size-16}px;
+      // svg size : 16x16 (minimum)
+      width: ${props.size-16 > 16 ? props.size-16 : 16}px;
+      height: ${props.size-16 > 16 ? props.size-16 : 16}px;
     }
   `}
-  
 `;
 
