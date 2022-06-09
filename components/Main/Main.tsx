@@ -1,9 +1,4 @@
-import styled from "styled-components";
-
-const StyledMain = styled.main`
-  width: 100%;
-  height: calc(100% - 136px);
-`;
+import { StyledMain } from './Main.style'
 
 const Main = ({ children }: any) => {
   return(

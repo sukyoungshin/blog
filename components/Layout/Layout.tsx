@@ -3,9 +3,14 @@ import Header from "@components/Header/Header";
 import Main from "@components/Main/Main";
 import Toolbar from "@components/Toolbar/Toolbar";
 
-const Layout = ({ children, ...props }: any): ReactElement => {
+interface LayoutType {
+  children: ReactElement;
+  default?: boolean;
+}
 
-  // 부모 컴포넌트에서 전달된 props값이 없으면, 기본헤더를 보여준다.
+const Layout = ({ children, ...props }: LayoutType): ReactElement => {
+
+  // 부모 컴포넌트에서 전달된 props값이 없으면, 뒤로가기 헤더를 보여주고 푸터는 생략한다.
   if (props.default === undefined) {
     return (
       <>
@@ -14,7 +19,7 @@ const Layout = ({ children, ...props }: any): ReactElement => {
       </>
     );
   } else {
-    // 부모 컴포넌트에서 전달된 props값이 있으면, 뒤로가기 헤더를 보여주고 푸터는 생략한다.
+    // 부모 컴포넌트에서 전달된 props값이 없으면, 기본헤더를 보여준다.
     return (
         <>
           <Header default />

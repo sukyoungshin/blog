@@ -3,7 +3,11 @@ import { StyledHeader, StyledNav } from "./Header.style";
 import { Button, Icon } from '@components/index';
 import { AiOutlineLeft } from "react-icons/ai";
 
-const Header = (props: any) => {
+interface Props {
+  default?: boolean;
+}
+
+const Header = ({ ...props }: Props) => {
   return (
     <>
       <Head>
