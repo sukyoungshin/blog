@@ -31,14 +31,17 @@ const DefaultHeading = () => {
     </StyledHeader>
   );
 }
-
 const ExceptionalHeading = () => {
   return (
     <StyledHeader>
-      <StyledNav icon>
-        <Icon size={32}>
-          <AiOutlineLeft />
-        </Icon>
+      <StyledNav>
+
+        <Button size={32}>
+          <Icon size={32}>
+            <AiOutlineLeft />
+          </Icon>
+        </Button>
+
       </StyledNav>
     </StyledHeader>
   );

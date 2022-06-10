@@ -7,6 +7,7 @@ export const StyledHeader = styled.header`
   min-height: 56px;
   max-height: 56px;
   background-color: ${props => props.theme.colors.WHITE_100};
+  border-bottom: 1px solid ${(props) => props.theme.colors.NAVY};
 `;
 
 export const StyledNav = styled.nav<{
@@ -30,16 +31,4 @@ export const StyledNav = styled.nav<{
     justify-content: center;
     cursor: pointer;
   }
-  // 뒤로가기 아이콘 사용 시, 적용될 스타일
-  ${(props) => props.icon && css`
-    span {
-      width: 32px;
-      height: 32px;
-    }
-    svg {
-      width: 24px;
-      height: 24px;
-      color: ${props => props.theme.colors.NAVY};
-    }
-  `}
 `;
