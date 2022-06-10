@@ -1,14 +1,11 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-export const StyledButton = styled.button<{
+export const ButtonWithText = styled.button<{
   large?: boolean;
   active?: boolean;
-  text?: boolean;
 }>`
-  border: none;
   border-radius: 4px;
   font-size: ${(props) => props.theme.fontSize.PARAGRAPH2};
-  cursor: pointer;
 
   // size
   width: ${(props) => props.large? '342px' : '88px'};
@@ -17,18 +14,47 @@ export const StyledButton = styled.button<{
   // active & inactive
   color: ${(props) => props.active? props.theme.colors.WHITE_200 : props.theme.colors.NAVY};
   background-color: ${(props) => props.active? props.theme.colors.NAVY : props.theme.colors.WHITE_200};
+`;
 
-  // SVG와 텍스트를 포함한 버튼인 경우
-  ${(props) => props.text && css`
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-gap: 8px;
-    gap: 8px;
+export const ButtonWithSVGIcon = styled.button<{
+  size?: number;
+  active?: boolean;
+}>`
+  border-radius: 4px;
+  color: ${(props) => props.theme.colors.NAVY};
+  font-size: ${(props) => props.theme.fontSize.PARAGRAPH2};
+  background-color: transparent;
 
-    svg {
-      color: ${(props) => props.theme.colors.NAVY};
-    }
-  `}
+  // size
+  width: ${(props) => props.size}px;
+  height: ${(props) => props.size}px;
+
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-gap: 8px;
+  gap: 8px;
+
+  svg {
+    color: ${(props) => props.theme.colors.NAVY};
+  }
+`;
+
+export const ButtonWithTextAndSVGIcon = styled.button<{
+  small?: boolean;
+}>`
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-gap: 8px;
+  gap: 8px;
+  
+  // size
+  width: ${(props) => props.small? 55 : 88}px;
+  height: 32px;
+
+  font-size: ${(props) => props.theme.fontSize.PARAGRAPH2};
+  border-radius: 4px;
 `;
