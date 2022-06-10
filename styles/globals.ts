@@ -28,6 +28,7 @@ export const GlobalStyle = createGlobalStyle`
   p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
+    line-height: 150%;
   }
   ul, li {
     margin: 0;
@@ -38,5 +39,10 @@ export const GlobalStyle = createGlobalStyle`
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  button {
+    border: none;
+    cursor: pointer;
   }
 `;
