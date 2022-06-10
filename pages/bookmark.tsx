@@ -4,7 +4,7 @@ import { Layout } from "@components/index";
 const Bookmark = () => {
   return (
     <>
-      Search
+      Bookmark
     </>
   );
 }

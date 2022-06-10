@@ -4,7 +4,7 @@ import { Layout } from '@components/index'
 const Write = () => {
   return (
     <>
-      Search
+      Write
     </>
   );
 }
