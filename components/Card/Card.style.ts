@@ -57,8 +57,8 @@ export const ContentWrapper = styled.div`
   padding: 0 16px;
   width: 100%;
   height: 206px;
-  background-color: rgba(255,255,255,0.1);// FIXME
   overflow-y: auto;
+  position: relative;
 
   .title,
   .content {
@@ -72,6 +72,28 @@ export const ContentWrapper = styled.div`
     a {
       margin-left: 20px;
     }
+  }
+`;
+
+export const PostImageWrapper = styled.div<{
+  url?: string;
+}>`
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(255,255,255,0.1);// FIXME
+  background-image: url('${(props) => props.url && props.url}');
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  opacity: 0.3;
+  filter: grayscale(1);
+  transition: opacity 0.3s;
+
+  :hover {
+    opacity: 1.0;
   }
 `;
 

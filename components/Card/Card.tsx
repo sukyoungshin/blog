@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { AiOutlineEllipsis, AiOutlineHeart, AiOutlineLike, AiOutlineMessage, AiOutlineShareAlt } from 'react-icons/ai';
-import { CardWrapper, ContentWrapper, Introduce, ProfileWrapper, TabMenu, TabMenuList } from "./Card.style";
+import { CardWrapper, ContentWrapper, Introduce, PostImageWrapper, ProfileWrapper, TabMenu, TabMenuList } from "./Card.style";
 import { Button, Icon } from '@components/index';
 import Image from 'next/image';
 import TempImage from 'public/cat.webp';
@@ -62,6 +62,11 @@ const BeforeLogin = ({...props}: any) => {
       </ProfileWrapper>
 
       <ContentWrapper>
+        {/* 
+        FIXME: 
+        - posting image 있을때만, 69번째 라인 컴포넌트가 나타나고, props로 이미지Url 전달하도록 로직수정 
+        */}
+        <PostImageWrapper url='cat.webp'/>
         <h2 className='title'>
           제목
         </h2>
@@ -70,7 +75,6 @@ const BeforeLogin = ({...props}: any) => {
           
           <a href="">더보기</a>
         </p>
-        <img alt="image"/>
       </ContentWrapper>
       
       <TabMenuList>
