@@ -22,14 +22,15 @@ export const ProfileWrapper = styled.div`
   width: 100%;
   display: inline-flex;
   flex-direction: row;
-
+  justify-content: space-between;
+  
   img {
-    display: inline-block;
     margin-right: 24px;
+    display: inline-block;
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    background-color: rgba(255,255,255,0.4);// FIXME
+    background-color: rgba(255,255,255,0.1);// FIXME
   }
 `;
   
@@ -38,7 +39,7 @@ export const Introduce = styled.div`
 
   display: inline-flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   
   h2 {
     font-size: ${(props) => props.theme.fontSize.PARAGRAPH1};
@@ -53,9 +54,25 @@ export const Introduce = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
+  padding: 0 16px;
   width: 100%;
   height: 206px;
-  background-color: rgba(255,255,255,0.4);// FIXME
+  background-color: rgba(255,255,255,0.1);// FIXME
+  overflow-y: auto;
+
+  .title,
+  .content {
+    line-height: 150%;
+  }
+  .title {
+    font-size: ${(props) => props.theme.fontSize.HEADING};
+  }
+  .content {
+    font-size: ${(props) => props.theme.fontSize.PARAGRAPH2};
+    a {
+      margin-left: 20px;
+    }
+  }
 `;
 
 export const TabMenuList = styled.ul`

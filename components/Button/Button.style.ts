@@ -57,4 +57,5 @@ export const ButtonWithTextAndSVGIcon = styled.button<{
 
   font-size: ${(props) => props.theme.fontSize.PARAGRAPH2};
   border-radius: 4px;
+  background-color: rgba(255,255,255,0.1); // FIXME
 `;

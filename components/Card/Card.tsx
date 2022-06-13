@@ -1,7 +1,9 @@
 import { ReactElement } from 'react';
 import { AiOutlineEllipsis, AiOutlineHeart, AiOutlineLike, AiOutlineMessage, AiOutlineShareAlt } from 'react-icons/ai';
 import { CardWrapper, ContentWrapper, Introduce, ProfileWrapper, TabMenu, TabMenuList } from "./Card.style";
-import { Button, Icon } from '@components/index'
+import { Button, Icon } from '@components/index';
+import Image from 'next/image';
+import TempImage from 'public/cat.webp';
 
 const randomBackgroundColor = () => {
   const randomNum = Math.floor(Math.random()*10);
@@ -37,27 +39,38 @@ const Card = (): ReactElement => {
 
 const BeforeLogin = ({...props}: any) => {
 
+  const tempContent = '내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용'.slice(0, 284);
+
   return (
     <CardWrapper 
       bgColor={props.randomColor}
     >
       <ProfileWrapper>
-        <img alt="profile" />
+        <Image 
+          width={64} 
+          height={64} 
+          src={TempImage} 
+          alt="profile picture"
+          className='profileimage'
+        />
         <Introduce>
-          <h2>홍길동</h2>
-          <p>자기소개1</p>
-          <p>자기소개2</p>
+          <h2>이름</h2>
+          <p>한 줄 자기소개</p>
+          <p>2022.06.13</p>
         </Introduce>
         <OptionButton />
       </ProfileWrapper>
 
       <ContentWrapper>
-        <h2>
+        <h2 className='title'>
           제목
         </h2>
-        <p>
-          내용
+        <p className='content'>
+          {tempContent}...
+          
+          <a href="">더보기</a>
         </p>
+        <img alt="image"/>
       </ContentWrapper>
       
       <TabMenuList>
