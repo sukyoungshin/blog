@@ -1,29 +1,36 @@
 import styled, { css } from "styled-components";
 
-export const StyledHeader = styled.header`
+export const HeaderWrapper = styled.header`
   padding: 12px 24px;
   width: 100%;
-  height: 56px;
-  min-height: 56px;
-  max-height: 56px;
-  background-color: ${props => props.theme.colors.WHITE_100};
-  border-bottom: 1px solid ${(props) => props.theme.colors.NAVY};
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const StyledNav = styled.nav<{
+export const LogoHeader = styled.nav<{
   icon?: boolean;
 }>`
+  // size
   width: 100%;
-  height: 100%;
+  max-width: 1024px;
+  height: 64px;
+  min-height: 64px;
+  max-height: 64px;
+
   display: inline-flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
-  // FIXME: 차후 수정
-  span {
+  .logo {
     width: 80px;
     height: 32px;
+    color: ${(props) => props.theme.colors.BLACK};
+    font-size: ${(props) => props.theme.fontSize.HEADING};
+    font-weight: 700; // FIXME
 
     display: inline-flex;
     flex-direction: row;
@@ -31,4 +38,95 @@ export const StyledNav = styled.nav<{
     justify-content: center;
     cursor: pointer;
   }
+`;
+
+export const ButtonWrapper = styled.ul`
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-gap: 8px;
+  gap: 8px;
+
+  li {
+    border-radius: 50%;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+`;
+
+export const TabMenu = styled.div`
+  margin-top: 24px;
+  width: 100%;
+  max-width: 1024px;
+  height: 48px;
+  min-height: 48px;
+  max-height: 48px;
+
+  ul {
+    width: 100%;
+
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    flex-gap: 16px;
+    gap: 16px;
+
+    li:nth-child(4) {
+      margin-left: auto;
+    }
+  }
+`;
+  
+export const MenuItem = styled.li<{
+  active?: boolean;
+}>`
+  padding: 16px;
+  height: 40px;
+  
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+
+  border-bottom: 2px solid transparent;
+  ${(props) => props.active && css`
+    border-bottom: 2px solid ${(props) => props.theme.colors.NAVY};
+  `}
+`;
+
+export const SelectMenuWrapper = styled.div`
+  width: 80px;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 4px;
+
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    height: 32px;
+    font-size: ${(props) => props.theme.fontSize.HEADING};
+    background-color: ${(props) => props.theme.colors.WHITE_000};  
+  }
+`;
+
+export const SelectMenu = styled.ul`
+  padding-left: 16px;
+  width: 72px;
+  height: 32px;
+
+  display: inline-flex;
+  flex-direction: column;
+  
+
+  border: none;
+  background-color: ${(props) => props.theme.colors.WHITE_000};  
+
+  // 기본 셀렉트버튼 제거
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 `;
