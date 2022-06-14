@@ -11,7 +11,7 @@ const MyPage = () => {
 
 MyPage.getLayout = function getLayout(page: ReactElement): ReactNode {
   return (
-    <Layout default>
+    <Layout>
       {page}
     </Layout>
   );

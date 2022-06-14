@@ -1,73 +1,82 @@
 import styled from "styled-components";
 
 export const CardWrapper = styled.article<{
-  bgColor?: string;
 }>`
-  margin: 0 auto;
-  width: 342px;
-  height: 350px;
+  margin: 16px;
+  width: 320px;
+  min-width: 320px;
+  height: 370px;
+  border-radius: 4px;
+  background-color: ${(props) => props.theme.colors.WHITE_000};
 
   display: inline-flex;
   flex-direction: column;
-  flex-gap: 16px;
-  gap: 16px;
 
-  background-color: ${(props) => props.bgColor};
-  border: 1px solid ${(props) => props.theme.colors.NAVY};
-  box-shadow: 10px 10px 0px #8d8d8d;
+  transition: transform 0.3s;
+  box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  position: relative;
 `;
 
-export const ProfileWrapper = styled.div`
-  padding: 16px 8px 0 8px;
+export const ImageWrapper = styled.div`
   width: 100%;
-  display: inline-flex;
-  flex-direction: row;
 
   img {
-    display: inline-block;
-    margin-right: 24px;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background-color: rgba(255,255,255,0.4);// FIXME
+    width: 100%;
+    height: 167px;
+    background-color: rgba(255,255,255,0.2);// 이미지가 로딩되지 않았을때를 대비(Defense Code)
+    border-radius: 4px 4px 0 0;
   }
 `;
   
-export const Introduce = styled.div`
-  width: calc(100% - 120px);
+export const ContentWrapper = styled.div`
+  padding: 16px;
+  width: 100%;
+  height: calc(100% - 40px);
+  overflow-y: auto;
+  background-color: rgba(255,255,255,0.4);// 이미지가 로딩되지 않았을때를 대비(Defense Code)
 
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
-  
   h2 {
-    font-size: ${(props) => props.theme.fontSize.PARAGRAPH1};
-    font-weight: 700;
+    font-size: ${(props) => props.theme.fontSize.HEADING};
   }
   p {
-    font-size: ${(props) => props.theme.fontSize.PARAGRAPH1};
-  }
-  p {
+    line-break: anywhere;
     font-size: ${(props) => props.theme.fontSize.PARAGRAPH2};
   }
-`;
-
-export const ContentWrapper = styled.div`
-  width: 100%;
-  height: 206px;
-  background-color: rgba(255,255,255,0.4);// FIXME
+  p:not(:last-child) {
+    height: 90px;
+  }
+  p:last-child {
+    color: ${(props) => props.theme.colors.GREY};
+    font-size: ${(props) => props.theme.fontSize.PARAGRAPH3};
+  }
 `;
 
 export const TabMenuList = styled.ul`
   width: 100%;
+  height: 40px;
+  background-color: ${(props) => props.theme.colors.WHITE_000};
+
   display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
 `;
 
 export const TabMenu = styled.li`
+  font-size: ${(props) => props.theme.fontSize.PARAGRAPH3};    
+
   ul {
+    margin: 16px;
+
     display: inline-flex;
     flex-direction: row;
     align-items: center;
@@ -75,5 +84,4 @@ export const TabMenu = styled.li`
     flex-gap: 8px;
     gap: 8px;
   }
-
 `;

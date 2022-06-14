@@ -1,5 +1,9 @@
 import { ReactElement } from 'react';
-import { ButtonWithSVGIcon, ButtonWithText, ButtonWithTextAndSVGIcon } from './Button.style';
+import { 
+  ButtonWithSVGIcon, 
+  ButtonWithText, 
+  ButtonWithTextAndSVGIcon 
+} from './Button.style';
 
 interface Props {
   children: string | ReactElement;
@@ -9,6 +13,7 @@ interface Props {
   onClick?: any;
   size?: number;
   small?: boolean;
+  handleMode?: Function;
 }
 
 const Button = ({ children, ...props }: Props) => {
@@ -42,7 +47,7 @@ const Button = ({ children, ...props }: Props) => {
   
   // SVG Only
   if (typeof children !== 'string') {
-
+    
     return (
       <ButtonWithSVGIcon 
         size={props.size}

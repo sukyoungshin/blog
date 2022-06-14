@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const CardWrapper = styled.section`
+  margin: 0 auto;
+  margin: -16px;
+  max-width: 1056px;
+  overflow-y: auto;
 
-  width: 100%;
-  min-height: calc(100% - 86px);
-
-  display: inline-flex;
-  flex-direction: column;
-  flex-gap: 16px;
-  gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
 `;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const ButtonWithText = styled.button<{
   large?: boolean;
@@ -20,14 +20,16 @@ export const ButtonWithSVGIcon = styled.button<{
   size?: number;
   active?: boolean;
 }>`
-  border-radius: 4px;
+  // font
   color: ${(props) => props.theme.colors.NAVY};
   font-size: ${(props) => props.theme.fontSize.PARAGRAPH2};
-  background-color: transparent;
-
+  
   // size
   width: ${(props) => props.size}px;
   height: ${(props) => props.size}px;
+  border-radius: ${(props) => props.active && '50%'};
+  background-color: transparent; // FIXME
+  background-color: ${(props) => props.theme.colors.WHITE_000};
 
   display: inline-flex;
   flex-direction: row;
@@ -36,7 +38,13 @@ export const ButtonWithSVGIcon = styled.button<{
   flex-gap: 8px;
   gap: 8px;
 
+  span {
+    width: inherit;
+    height: inherit;
+  }
   svg {
+    width: inherit:
+    height: inherit;
     color: ${(props) => props.theme.colors.NAVY};
   }
 `;
@@ -48,13 +56,14 @@ export const ButtonWithTextAndSVGIcon = styled.button<{
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-gap: 8px;
-  gap: 8px;
-  
+  flex-gap: 4px;
+  gap: 4px;
+    
   // size
   width: ${(props) => props.small? 55 : 88}px;
   height: 32px;
 
-  font-size: ${(props) => props.theme.fontSize.PARAGRAPH2};
+  font-size: ${(props) => props.theme.fontSize.PARAGRAPH3};
+  background-color: transparent;
   border-radius: 4px;
 `;
