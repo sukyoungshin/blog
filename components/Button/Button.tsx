@@ -34,7 +34,7 @@ const Button = ({ children, ...props }: Props) => {
 
   // SVG And Text
   if (typeof children !== 'string' && props.svgAndText) {
-    
+
     return (
       <ButtonWithTextAndSVGIcon 
         small={props.small}

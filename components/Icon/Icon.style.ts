@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 export const StyledNormalIcon = styled.span<{
   size?: number;
   active?: boolean;
+  noBorderRadius?: boolean;
 }>`
   // default
   display: inline-flex;
@@ -16,11 +17,12 @@ export const StyledNormalIcon = styled.span<{
   color: ${(props) => props.active? props.theme.colors.NAVY : props.theme.colors.WHITE_300};
   background-color: none;
 
+
   // size
   ${(props) => props.size && css`  
     width: ${props.size}px;
     height: ${props.size}px;
-    border-radius: ${props.size / 2}px;
+    border-radius: ${props.noBorderRadius ? null : (props.size / 2)};
 
     svg {
       // svg size : 16x16 (minimum)

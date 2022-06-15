@@ -20,6 +20,7 @@ export const ButtonWithSVGIcon = styled.button<{
   size?: number;
   active?: boolean;
 }>`
+  padding: 0;
   // font
   color: ${(props) => props.theme.colors.NAVY};
   font-size: ${(props) => props.theme.fontSize.PARAGRAPH2};
@@ -27,9 +28,8 @@ export const ButtonWithSVGIcon = styled.button<{
   // size
   width: ${(props) => props.size}px;
   height: ${(props) => props.size}px;
-  border-radius: ${(props) => props.active && '50%'};
-  background-color: transparent; // FIXME
-  background-color: ${(props) => props.theme.colors.WHITE_000};
+  border-radius: ${(props) => props.active ? '50%' : null};
+  background-color: transparent;
 
   display: inline-flex;
   flex-direction: row;
