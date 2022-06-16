@@ -30,20 +30,12 @@ const Card = (): ReactElement => {
         </ImageWrapper>
 
         <ContentWrapper>
-          <h2>
-            {tempTitle}...
-          </h2>
+          <h2>{tempTitle}...</h2>
+          <p>{tempContent}...</p>
           <p>
-            {tempContent}...
-          </p>
-          <p>
-            <span>
-              {tempDate}
-            </span>
+            <span>{tempDate}</span>
             {' '}
-            <span>
-              {tempNumberOfComments}
-            </span>
+            <span>{tempNumberOfComments}</span>
           </p>
         </ContentWrapper>
         
@@ -61,9 +53,7 @@ const Card = (): ReactElement => {
               </li>
               <li>
                 by{' '}
-                <strong>
-                  {tempUserName}
-                </strong>
+                <strong>{tempUserName}</strong>
               </li>
             </ul>
           </TabMenu>
@@ -91,9 +81,7 @@ const LikeButton = (): ReactElement => {
       <Icon size={24} active={true}>
         <BsFillHeartFill />
       </Icon>
-      <span>
-        0
-      </span>
+      <span>0</span>
     </Button>
   );
 }
