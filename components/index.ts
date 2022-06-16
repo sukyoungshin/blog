@@ -5,4 +5,4 @@ export { default as Header } from './Header/Header';
 export { default as Card } from './Card/Card';
 export { default as Button } from './Button/Button';
 export { default as Icon } from './Icon/Icon';
-export { default as CustomSelectMenuWrapper } from './CustomSelectMenu/CustomSelectMenu';
+export { default as CustomDropdownMenu } from './CustomDropdownMenu/CustomDropdownMenu';

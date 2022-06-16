@@ -18,7 +18,7 @@ import {
 import React, { useState } from "react";
 import Link from "next/link";
 import { IconType } from "react-icons/lib";
-import CustomSelectMenu from "@components/CustomSelectMenu/CustomSelectMenu";
+import { CustomDropdownMenu } from '@components/index';
 
 const Header = () => {
   return (
@@ -90,7 +90,7 @@ const DefaultHeading = () => {
             ))
           }          
           <li>
-            <CustomSelectMenu />
+            <CustomDropdownMenu />
           </li>
           <li>
             <OptionButton />

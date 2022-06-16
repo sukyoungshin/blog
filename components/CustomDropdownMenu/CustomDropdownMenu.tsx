@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Icon } from '@components/index';
 import { BsCaretDownFill } from "react-icons/bs";
-import { CustomSelectMenuWrapper, SelectMenu, SelectMenuItem, SelectMenuWrapper } from "./CustomSelectMenu.style";
+import { CustomSelectMenuWrapper, SelectMenu, SelectMenuItem, SelectMenuWrapper } from "./CustomDropdownMenu.style";
 
 interface TSelectedMenuLists {
   id: number;
@@ -14,7 +14,7 @@ const SelectMenuLists: TSelectedMenuLists[] = [
   {id: 3, text: '올해'},
 ];
 
-const CustomSelectMenu = () => {
+const CustomDropdownMenu = () => {
   // 기본 설정된 리스트목록
   const [ selectedId, setSelectedId ] = useState(1);
   const handleSelectedId = (currId: number) => {
@@ -92,4 +92,4 @@ const SelectMenuButton = ({...props} : any) => {
 }
 
 
-export default CustomSelectMenu;
+export default CustomDropdownMenu;
