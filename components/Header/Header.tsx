@@ -1,19 +1,14 @@
 import Head from "next/head";
 import { 
   ButtonWrapper, 
-  CustomSelectMenuWrapper, 
   HeaderWrapper, 
   LogoHeader, 
   MenuItem, 
-  SelectMenu, 
-  SelectMenuItem, 
-  SelectMenuWrapper, 
   TabMenu 
 } from "./Header.style";
 import { Button, Icon } from '@components/index';
 import { 
   BsBrightnessHigh, 
-  BsCaretDownFill, 
   BsClock, 
   BsFillMoonFill, 
   BsGraphUp, 
@@ -22,6 +17,8 @@ import {
 } from 'react-icons/bs';
 import React, { useState } from "react";
 import Link from "next/link";
+import { IconType } from "react-icons/lib";
+import CustomSelectMenu from "@components/CustomSelectMenu/CustomSelectMenu";
 
 const Header = () => {
   return (
@@ -36,14 +33,20 @@ const Header = () => {
   );
 };
 
-const TabMenuLists = [
-  {id: 0, icon: BsGraphUp, text: '트렌딩', active: true},
-  {id: 1, icon: BsClock, text: '최신', active: false},
+interface ITabMenuLists {
+  id: number;
+  icon: IconType;
+  text: string;
+}
+
+const TabMenuLists: ITabMenuLists[] = [
+  {id: 0, icon: BsGraphUp, text: '트렌딩'},
+  {id: 1, icon: BsClock, text: '최신'},
 ];
 
 const DefaultHeading = () => {
-  const [ active, setActive ] = useState(false);
-  const handleActive = () => setActive(!active);
+  const [selectId, setSelectId] = useState(0);
+  const handleSelectId = (id: number) => setSelectId(id);
 
   return (
     <HeaderWrapper>
@@ -74,8 +77,8 @@ const DefaultHeading = () => {
             TabMenuLists.map((list) => (
               <MenuItem
                 key={list.id} 
-                active={active === list.active} 
-                onClick={handleActive}
+                active={list.id === selectId} 
+                onClick={() => handleSelectId(list.id)}
               >
                 <Button>
                   <Icon size={24}>
@@ -98,74 +101,6 @@ const DefaultHeading = () => {
   );
 }
 
-interface TSelectedMenuLists {
-  id: number;
-  text: string;
-}
-const SelectMenuLists: TSelectedMenuLists[] = [
-  {id: 0, text: '오늘'},
-  {id: 1, text: '이번 주'},
-  {id: 2, text: '이번달'},
-  {id: 3, text: '올해'},
-]
-
-const CustomSelectMenu = () => {
-  // 기본 설정된 리스트목록
-  const [ selectedId, setSelectedId ] = useState(1);
-  const handleSelectedId = (currId: number) => {
-    setSelectedId(currId);
-    handleSelectMenuToast(); // 토스트팝업 닫기
-  };
-
-  // 리스트 팝업
-  const [ visible, setVisible ] = useState(false);
-  const handleSelectMenuToast = () => setVisible(!visible);
-
-  return (
-    <CustomSelectMenuWrapper>
-    <SelectMenuWrapper>
-      <button 
-        type="button"
-        onClick={handleSelectMenuToast} 
-        className="initial-select"
-      >
-        {SelectMenuLists[selectedId]?.text}
-      </button>
-      <SelectMenuButton 
-        handleSelectMenuToast={handleSelectMenuToast} 
-      />
-    </SelectMenuWrapper>
-    {
-      visible && (
-        <SelectMenuToast 
-          selectedId={selectedId}
-          handleSelectedId={handleSelectedId} 
-        />
-      )
-    }
-    </CustomSelectMenuWrapper>
-  );
-}
-
-const SelectMenuToast = ({...props}: any) => {
-
-  return (
-    <SelectMenu>
-      {
-        SelectMenuLists.map((list) => (
-          <SelectMenuItem 
-            key={list.id}
-            active={list.id === props.selectedId} 
-            onClick={() => props.handleSelectedId(list.id)}
-          >
-            {list.text}
-          </SelectMenuItem>  
-        ))
-      }
-    </SelectMenu>  
-  );
-}
-
 const OptionButton = () => {
 
   return (
@@ -179,21 +114,6 @@ const OptionButton = () => {
     </Button>
   );
 };
-
-const SelectMenuButton = ({...props} : any) => {
-
-  return (
-    <Button 
-      size={32} 
-      active={false} 
-      onClick={props.handleSelectMenuToast}
-    >
-      <Icon size={16} noBorderRadius={true}>
-        <BsCaretDownFill />
-      </Icon>
-    </Button>
-  );
-}
 
 const ButtonModeSwitch = () => {
   const [ themeMode, setThemeMode ] = useState(false);

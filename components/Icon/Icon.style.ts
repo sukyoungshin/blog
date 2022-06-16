@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 export const StyledNormalIcon = styled.span<{
   size?: number;
   active?: boolean;
-  noBorderRadius?: boolean;
+  borderRadius?: boolean;
 }>`
   // default
   display: inline-flex;
@@ -22,7 +22,7 @@ export const StyledNormalIcon = styled.span<{
   ${(props) => props.size && css`  
     width: ${props.size}px;
     height: ${props.size}px;
-    border-radius: ${props.noBorderRadius ? null : (props.size / 2)};
+    border-radius: ${props.borderRadius ? (props.size / 2) : null};
 
     svg {
       // svg size : 16x16 (minimum)

@@ -5,7 +5,7 @@ interface Props {
   children: ReactElement;
   size: number;
   active?: boolean;
-  noBorderRadius?: boolean;
+  borderRadius?: boolean;
 }
 
 const Icon = ({children, ...props}: Props) => {  
@@ -13,7 +13,7 @@ const Icon = ({children, ...props}: Props) => {
     <StyledNormalIcon 
       size={props.size}
       active={props.active}
-      noBorderRadius={props.noBorderRadius}
+      borderRadius={props.borderRadius}
     >
       {children}
     </StyledNormalIcon>
