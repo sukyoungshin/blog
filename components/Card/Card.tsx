@@ -18,7 +18,7 @@ const Card = (): ReactElement => {
   return (
     // FIXME: link수정
     <Link href="/write">
-    <a href=''>
+    <a>
       <CardWrapper>
         <ImageWrapper>
           <Image 

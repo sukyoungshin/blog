@@ -19,31 +19,33 @@ const CustomSelectMenu = () => {
   const [ selectedId, setSelectedId ] = useState(1);
   const handleSelectedId = (currId: number) => {
     setSelectedId(currId);
-    handleSelectMenuToast(); // 토스트팝업 닫기
+    closeDropdownMenu(); // 토스트팝업 닫기
   };
 
   // 리스트 팝업
   const [ visible, setVisible ] = useState(false);
-  const handleSelectMenuToast = () => setVisible(!visible);
+  const closeDropdownMenu = () => setVisible(false);
+  const openDropdownMenu = () => setVisible(true);
 
   return (
     <CustomSelectMenuWrapper>
     <SelectMenuWrapper>
       <button 
         type="button"
-        onClick={handleSelectMenuToast} 
+        onClick={openDropdownMenu} 
         className="initial-select"
       >
         {SelectMenuLists[selectedId]?.text}
       </button>
       <SelectMenuButton 
-        handleSelectMenuToast={handleSelectMenuToast} 
+        openDropdownMenu={openDropdownMenu} 
       />
     </SelectMenuWrapper>
     {
       visible && (
         <SelectMenuToast 
           selectedId={selectedId}
+          closeDropdownMenu={closeDropdownMenu}
           handleSelectedId={handleSelectedId} 
         />
       )
@@ -61,7 +63,10 @@ const SelectMenuToast = ({...props}: any) => {
           <SelectMenuItem 
             key={list.id}
             active={list.id === props.selectedId} 
-            onClick={() => props.handleSelectedId(list.id)}
+            onClick={() => {
+              props.handleSelectedId(list.id);
+              props.closeSelectMenuToast;
+            }}
           >
             {list.text}
           </SelectMenuItem>  
@@ -77,7 +82,7 @@ const SelectMenuButton = ({...props} : any) => {
     <Button 
       size={32} 
       active={false} 
-      onClick={props.handleSelectMenuToast}
+      onClick={props.openDropdownMenu}
     >
       <Icon size={16} borderRadius={false}>
         <BsCaretDownFill />
