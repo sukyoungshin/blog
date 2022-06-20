@@ -1,5 +1,5 @@
-import React, { ReactElement } from "react";
-import { Container, Header, Main } from "@components/index";
+import React, { ReactElement } from 'react';
+import { Container, Header, Main } from '@components/index';
 
 interface LayoutType {
   children: ReactElement;
@@ -9,9 +9,7 @@ const Layout = ({ children }: LayoutType): ReactElement => {
   return (
     <Container>
       <Header />
-      <Main>
-        {children}
-      </Main>
+      <Main>{children}</Main>
     </Container>
   );
 };

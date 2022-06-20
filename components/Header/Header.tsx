@@ -1,23 +1,10 @@
-import Head from "next/head";
-import { 
-  ButtonWrapper, 
-  HeaderWrapper, 
-  LogoHeader, 
-  MenuItem, 
-  TabMenu 
-} from "./Header.style";
+import Head from 'next/head';
+import { ButtonWrapper, HeaderWrapper, LogoHeader, MenuItem, TabMenu } from './Header.style';
 import { Button, Icon } from '@components/index';
-import { 
-  BsBrightnessHigh, 
-  BsClock, 
-  BsFillMoonFill, 
-  BsGraphUp, 
-  BsSearch, 
-  BsThreeDotsVertical 
-} from 'react-icons/bs';
-import React, { useState } from "react";
-import Link from "next/link";
-import { IconType } from "react-icons/lib";
+import { BsBrightnessHigh, BsClock, BsFillMoonFill, BsGraphUp, BsSearch, BsThreeDotsVertical } from 'react-icons/bs';
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { IconType } from 'react-icons/lib';
 import { CustomDropdownMenu } from '@components/index';
 
 const Header = () => {
@@ -40,8 +27,8 @@ interface ITabMenuLists {
 }
 
 const TabMenuLists: ITabMenuLists[] = [
-  {id: 0, icon: BsGraphUp, text: '트렌딩'},
-  {id: 1, icon: BsClock, text: '최신'},
+  { id: 0, icon: BsGraphUp, text: '트렌딩' },
+  { id: 1, icon: BsClock, text: '최신' },
 ];
 
 const DefaultHeading = () => {
@@ -52,9 +39,7 @@ const DefaultHeading = () => {
     <HeaderWrapper>
       <LogoHeader>
         <span className="logo">
-          <Link href="/">
-            DeVelog
-          </Link>
+          <Link href="/">DeVelog</Link>
         </span>
 
         <ButtonWrapper>
@@ -66,29 +51,23 @@ const DefaultHeading = () => {
           </li>
           <li>
             <Button active>로그인</Button>
-          {/* <Button>로그아웃</Button> */}
+            {/* <Button>로그아웃</Button> */}
           </li>
         </ButtonWrapper>
       </LogoHeader>
 
       <TabMenu>
         <ul>
-          {
-            TabMenuLists.map((list) => (
-              <MenuItem
-                key={list.id} 
-                active={list.id === selectId} 
-                onClick={() => handleSelectId(list.id)}
-              >
-                <Button>
-                  <Icon size={24}>
-                    <list.icon />
-                  </Icon>
-                  {list.text}
-                </Button>
-              </MenuItem>
-            ))
-          }          
+          {TabMenuLists.map((list) => (
+            <MenuItem key={list.id} active={list.id === selectId} onClick={() => handleSelectId(list.id)}>
+              <Button>
+                <Icon size={24}>
+                  <list.icon />
+                </Icon>
+                {list.text}
+              </Button>
+            </MenuItem>
+          ))}
           <li>
             <CustomDropdownMenu />
           </li>
@@ -99,15 +78,11 @@ const DefaultHeading = () => {
       </TabMenu>
     </HeaderWrapper>
   );
-}
+};
 
 const OptionButton = () => {
-
   return (
-    <Button 
-      size={32} 
-      onClick={() => console.log('옵션실행')}
-    >
+    <Button size={32} onClick={() => console.log('옵션실행')}>
       <Icon size={32} active={true}>
         <BsThreeDotsVertical />
       </Icon>
@@ -116,28 +91,20 @@ const OptionButton = () => {
 };
 
 const ButtonModeSwitch = () => {
-  const [ themeMode, setThemeMode ] = useState(false);
+  const [themeMode, setThemeMode] = useState(false);
   const handleMode = () => {
     // FIXME: theme background color change
     setThemeMode(!themeMode);
-  }
+  };
 
   return (
-    <Button 
-      size={40} 
-      onClick={handleMode}
-    >
-      {
-        themeMode
-        ? <IconLightMode /> 
-        : <IconDarkMode />
-      }
+    <Button size={40} onClick={handleMode}>
+      {themeMode ? <IconLightMode /> : <IconDarkMode />}
     </Button>
   );
-}
+};
 
 const IconLightMode = () => {
-
   return (
     <Icon size={40}>
       <BsFillMoonFill />
@@ -146,7 +113,6 @@ const IconLightMode = () => {
 };
 
 const IconDarkMode = () => {
-
   return (
     <Icon size={40}>
       <BsBrightnessHigh />
@@ -155,7 +121,6 @@ const IconDarkMode = () => {
 };
 
 const ButtonSearch = () => {
-
   return (
     <Button size={40}>
       <Icon size={40}>
