@@ -1,24 +1,11 @@
-import Head from 'next/head'
-import {
-  ButtonWrapper,
-  HeaderWrapper,
-  LogoHeader,
-  MenuItem,
-  TabMenu,
-} from './Header.style'
-import { Button, Icon } from '@components/index'
-import {
-  BsBrightnessHigh,
-  BsClock,
-  BsFillMoonFill,
-  BsGraphUp,
-  BsSearch,
-  BsThreeDotsVertical,
-} from 'react-icons/bs'
-import React, { useState } from 'react'
-import Link from 'next/link'
-import { IconType } from 'react-icons/lib'
-import { CustomDropdownMenu } from '@components/index'
+import Head from 'next/head';
+import { ButtonWrapper, HeaderWrapper, LogoHeader, MenuItem, TabMenu } from './Header.style';
+import { Button, Icon } from '@components/index';
+import { BsBrightnessHigh, BsClock, BsFillMoonFill, BsGraphUp, BsSearch, BsThreeDotsVertical } from 'react-icons/bs';
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { IconType } from 'react-icons/lib';
+import { CustomDropdownMenu } from '@components/index';
 
 const Header = () => {
   return (
@@ -30,23 +17,23 @@ const Header = () => {
       </Head>
       <DefaultHeading />
     </>
-  )
-}
+  );
+};
 
 interface ITabMenuLists {
-  id: number
-  icon: IconType
-  text: string
+  id: number;
+  icon: IconType;
+  text: string;
 }
 
 const TabMenuLists: ITabMenuLists[] = [
   { id: 0, icon: BsGraphUp, text: '트렌딩' },
   { id: 1, icon: BsClock, text: '최신' },
-]
+];
 
 const DefaultHeading = () => {
-  const [selectId, setSelectId] = useState(0)
-  const handleSelectId = (id: number) => setSelectId(id)
+  const [selectId, setSelectId] = useState(0);
+  const handleSelectId = (id: number) => setSelectId(id);
 
   return (
     <HeaderWrapper>
@@ -72,11 +59,7 @@ const DefaultHeading = () => {
       <TabMenu>
         <ul>
           {TabMenuLists.map((list) => (
-            <MenuItem
-              key={list.id}
-              active={list.id === selectId}
-              onClick={() => handleSelectId(list.id)}
-            >
+            <MenuItem key={list.id} active={list.id === selectId} onClick={() => handleSelectId(list.id)}>
               <Button>
                 <Icon size={24}>
                   <list.icon />
@@ -94,8 +77,8 @@ const DefaultHeading = () => {
         </ul>
       </TabMenu>
     </HeaderWrapper>
-  )
-}
+  );
+};
 
 const OptionButton = () => {
   return (
@@ -104,38 +87,38 @@ const OptionButton = () => {
         <BsThreeDotsVertical />
       </Icon>
     </Button>
-  )
-}
+  );
+};
 
 const ButtonModeSwitch = () => {
-  const [themeMode, setThemeMode] = useState(false)
+  const [themeMode, setThemeMode] = useState(false);
   const handleMode = () => {
     // FIXME: theme background color change
-    setThemeMode(!themeMode)
-  }
+    setThemeMode(!themeMode);
+  };
 
   return (
     <Button size={40} onClick={handleMode}>
       {themeMode ? <IconLightMode /> : <IconDarkMode />}
     </Button>
-  )
-}
+  );
+};
 
 const IconLightMode = () => {
   return (
     <Icon size={40}>
       <BsFillMoonFill />
     </Icon>
-  )
-}
+  );
+};
 
 const IconDarkMode = () => {
   return (
     <Icon size={40}>
       <BsBrightnessHigh />
     </Icon>
-  )
-}
+  );
+};
 
 const ButtonSearch = () => {
   return (
@@ -144,7 +127,7 @@ const ButtonSearch = () => {
         <BsSearch />
       </Icon>
     </Button>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

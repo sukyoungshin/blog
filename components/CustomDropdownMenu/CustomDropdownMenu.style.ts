@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const CustomSelectMenuWrapper = styled.div`
   width: 96px;
   height: 40px;
   line-height: 40px;
-`
+`;
 
 export const SelectMenuWrapper = styled.div`
   width: 96px;
@@ -26,7 +26,7 @@ export const SelectMenuWrapper = styled.div`
     font-size: ${(props) => props.theme.fontSize.HEADING};
     background-color: ${(props) => props.theme.colors.WHITE_000};
   }
-`
+`;
 
 export const SelectMenu = styled.ul`
   width: 96px;
@@ -38,10 +38,10 @@ export const SelectMenu = styled.ul`
 
   border: none;
   background-color: ${(props) => props.theme.colors.WHITE_000};
-`
+`;
 
 export const SelectMenuItem = styled.li<{
-  active?: boolean
+  active?: boolean;
 }>`
   padding-left: 16px;
   width: 100%; // 96px;
@@ -53,4 +53,4 @@ export const SelectMenuItem = styled.li<{
   &:hover {
     background-color: rgba(1, 1, 1, 0.1);
   }
-`
+`;

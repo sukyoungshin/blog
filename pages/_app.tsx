@@ -1,29 +1,27 @@
-import type { NextPage } from 'next'
-import type { AppProps } from 'next/app'
-import { GlobalStyle } from '@styles/globals'
-import { ThemeProvider } from 'styled-components'
-import { defaultTheme } from '@styles/theme'
-import { ReactElement, ReactNode } from 'react'
+import type { NextPage } from 'next';
+import type { AppProps } from 'next/app';
+import { GlobalStyle } from '@styles/globals';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@styles/theme';
+import { ReactElement, ReactNode } from 'react';
 
 type NextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactNode
-}
+  getLayout?: (page: ReactElement) => ReactNode;
+};
 
 type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout
-}
+  Component: NextPageWithLayout;
+};
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const getLayout = Component.getLayout || ((page) => page)
+  const getLayout = Component.getLayout || ((page) => page);
 
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider theme={defaultTheme}>
-        {getLayout(<Component {...pageProps} />)}
-      </ThemeProvider>
+      <ThemeProvider theme={defaultTheme}>{getLayout(<Component {...pageProps} />)}</ThemeProvider>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

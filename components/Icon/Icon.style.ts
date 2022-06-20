@@ -1,9 +1,9 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
 export const StyledNormalIcon = styled.span<{
-  size?: number
-  active?: boolean
-  borderRadius?: boolean
+  size?: number;
+  active?: boolean;
+  borderRadius?: boolean;
 }>`
   // default
   display: inline-flex;
@@ -14,8 +14,7 @@ export const StyledNormalIcon = styled.span<{
   transition: all 0.4s; // FIXME
 
   // active & inactive
-  color: ${(props) =>
-    props.active ? props.theme.colors.NAVY : props.theme.colors.WHITE_300};
+  color: ${(props) => (props.active ? props.theme.colors.NAVY : props.theme.colors.WHITE_300)};
   background-color: none;
 
   // size
@@ -32,4 +31,4 @@ export const StyledNormalIcon = styled.span<{
         height: ${props.size - 16 > 16 ? props.size - 16 : 16}px;
       }
     `}
-`
+`;

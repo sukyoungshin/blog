@@ -1,5 +1,5 @@
-import { COLOR } from './color'
-import { FONTSIZE } from './fontSize'
+import { COLOR } from './color';
+import { FONTSIZE } from './fontSize';
 
 const defaultTheme = {
   fontSize: {
@@ -8,7 +8,7 @@ const defaultTheme = {
   colors: {
     ...COLOR,
   },
-}
-export type defaultThemeType = typeof defaultTheme
+};
+export type defaultThemeType = typeof defaultTheme;
 
-export { defaultTheme }
+export { defaultTheme };

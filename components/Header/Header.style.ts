@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
 export const HeaderWrapper = styled.header`
   padding: 12px 24px;
@@ -8,10 +8,10 @@ export const HeaderWrapper = styled.header`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const LogoHeader = styled.nav<{
-  icon?: boolean
+  icon?: boolean;
 }>`
   // size
   width: 100%;
@@ -38,7 +38,7 @@ export const LogoHeader = styled.nav<{
     justify-content: center;
     cursor: pointer;
   }
-`
+`;
 
 export const ButtonWrapper = styled.ul`
   display: inline-flex;
@@ -55,7 +55,7 @@ export const ButtonWrapper = styled.ul`
       background-color: rgba(0, 0, 0, 0.1);
     }
   }
-`
+`;
 
 export const TabMenu = styled.div`
   margin-top: 24px;
@@ -80,10 +80,10 @@ export const TabMenu = styled.div`
       margin-left: auto;
     }
   }
-`
+`;
 
 export const MenuItem = styled.li<{
-  active?: boolean
+  active?: boolean;
 }>`
   padding: 16px;
   height: 40px;
@@ -100,4 +100,4 @@ export const MenuItem = styled.li<{
     css`
       border-bottom: 2px solid ${(props) => props.theme.colors.NAVY};
     `}
-`
+`;

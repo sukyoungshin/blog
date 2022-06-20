@@ -12,4 +12,4 @@ export const COLOR = {
 
   ACTIVE: '#12B886',
   WARNING: '#FF6B6B',
-}
+};

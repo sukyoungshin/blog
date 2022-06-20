@@ -1,8 +1,8 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
 export const ButtonWithText = styled.button<{
-  large?: boolean
-  active?: boolean
+  large?: boolean;
+  active?: boolean;
 }>`
   border-radius: 4px;
   font-size: ${(props) => props.theme.fontSize.PARAGRAPH2};
@@ -12,15 +12,13 @@ export const ButtonWithText = styled.button<{
   height: ${(props) => (props.large ? '48px' : '32px')};
 
   // active & inactive
-  color: ${(props) =>
-    props.active ? props.theme.colors.WHITE_200 : props.theme.colors.NAVY};
-  background-color: ${(props) =>
-    props.active ? props.theme.colors.NAVY : props.theme.colors.WHITE_200};
-`
+  color: ${(props) => (props.active ? props.theme.colors.WHITE_200 : props.theme.colors.NAVY)};
+  background-color: ${(props) => (props.active ? props.theme.colors.NAVY : props.theme.colors.WHITE_200)};
+`;
 
 export const ButtonWithSVGIcon = styled.button<{
-  size?: number
-  active?: boolean
+  size?: number;
+  active?: boolean;
 }>`
   padding: 0;
   // font
@@ -49,10 +47,10 @@ export const ButtonWithSVGIcon = styled.button<{
     height: inherit;
     color: ${(props) => props.theme.colors.NAVY};
   }
-`
+`;
 
 export const ButtonWithTextAndSVGIcon = styled.button<{
-  small?: boolean
+  small?: boolean;
 }>`
   display: inline-flex;
   flex-direction: row;
@@ -68,4 +66,4 @@ export const ButtonWithTextAndSVGIcon = styled.button<{
   font-size: ${(props) => props.theme.fontSize.PARAGRAPH3};
   background-color: transparent;
   border-radius: 4px;
-`
+`;
