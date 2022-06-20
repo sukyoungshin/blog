@@ -14,14 +14,14 @@ type AppPropsWithLayout = AppProps & {
 }
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const getLayout = Component.getLayout || ((page) => page);
+  const getLayout = Component.getLayout || ((page) => page)
 
   return (
     <>
-    <GlobalStyle />
-    <ThemeProvider theme={defaultTheme}>
-      {getLayout(<Component {...pageProps} />)}
-    </ThemeProvider>
+      <GlobalStyle />
+      <ThemeProvider theme={defaultTheme}>
+        {getLayout(<Component {...pageProps} />)}
+      </ThemeProvider>
     </>
   )
 }

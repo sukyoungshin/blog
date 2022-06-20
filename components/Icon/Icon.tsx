@@ -1,16 +1,16 @@
-import { ReactElement } from "react";
-import { StyledNormalIcon } from "./Icon.style";
+import { ReactElement } from 'react'
+import { StyledNormalIcon } from './Icon.style'
 
 interface Props {
-  children: ReactElement;
-  size: number;
-  active?: boolean;
-  borderRadius?: boolean;
+  children: ReactElement
+  size: number
+  active?: boolean
+  borderRadius?: boolean
 }
 
-const Icon = ({children, ...props}: Props) => {  
+const Icon = ({ children, ...props }: Props) => {
   return (
-    <StyledNormalIcon 
+    <StyledNormalIcon
       size={props.size}
       active={props.active}
       borderRadius={props.borderRadius}
@@ -18,6 +18,6 @@ const Icon = ({children, ...props}: Props) => {
       {children}
     </StyledNormalIcon>
   )
-};
+}
 
-export default Icon;
+export default Icon
