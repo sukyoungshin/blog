@@ -19,9 +19,9 @@ export const GlobalStyle = createGlobalStyle`
   #__next {
     padding: 0;
     margin: 0 auto;
-    width: 390px;
+    width: 100%;
     min-width: 390px;
-    max-width: 390px;
+    max-width: 100%;
     height: 100%;
   }
 

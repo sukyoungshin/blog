@@ -11,7 +11,7 @@ const Bookmark = () => {
 
 Bookmark.getLayout = function getLayout(page: ReactElement): ReactNode {
   return (
-    <Layout default>
+    <Layout>
       {page}
     </Layout>
   );

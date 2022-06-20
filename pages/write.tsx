@@ -11,7 +11,7 @@ const Write = () => {
 
 Write.getLayout = function getLayout(page: ReactElement): ReactNode {
   return (
-    <Layout default>
+    <Layout>
       {page}
     </Layout>
   );
