@@ -6,6 +6,30 @@ import Link from 'next/link';
 import { BsFillHeartFill } from 'react-icons/bs';
 import { useAPI } from '@utils/useAPI';
 
+interface IPosts {
+  id: number;
+  title: string;
+  content: string;
+  createDate: string;
+  imgSrc: string;
+  postUrl: string;
+  user: IUser;
+  likeInfo: ILikeInfo;
+  commentInfo: ICommentInfo;
+};
+interface IUser {
+  id: number;
+  name: string;
+  userId: string;
+};
+interface ILikeInfo {
+  numberOfLikes: number;
+  isLikeClickUser: string;
+};
+interface ICommentInfo {
+  numberOfComments: number;
+};
+
 const API_URL = 'posts';
 const Card = (): ReactElement => {
   const {loading, error, data} = useAPI(API_URL);  
@@ -17,7 +41,7 @@ const Card = (): ReactElement => {
     // FIXME: postUrl변경 (db.json)
     <>
     {
-      data.map((d) => (
+      data.map((d: IPosts) => (
       <Link 
         key={data ? d.id : 0}
         href={data ? d.postUrl : '/'}
@@ -39,7 +63,7 @@ const Card = (): ReactElement => {
             <p>
               <span>{d.createDate}</span>
               {' '}
-              <span>{d.numberOfComments}개의 댓글</span>
+              <span>{d.commentInfo.numberOfComments}개의 댓글</span>
             </p>
           </ContentWrapper>
           
@@ -52,13 +76,12 @@ const Card = (): ReactElement => {
                     width={24}
                     height={24}
                     style={{ borderRadius: '50%'}}
-                    alt={`${d.userName}님의 프로필사진`}
+                    alt={`${d.user.name}님의 프로필사진`}
                   />
                 </li>
                 <li>
                   by{' '}
-                  <strong>{d.userName}</strong>
-
+                  <strong>{d.user.name}</strong>
                 </li>
               </ul>
             </TabMenu>
@@ -90,7 +113,7 @@ const LikeButton = ({...props}: any): ReactElement => {
         <BsFillHeartFill />
       </Icon>
       <span>
-        {props.numberOfLikes}
+        {props.likeInfo.numberOfLikes}
       </span>
     </Button>
   );

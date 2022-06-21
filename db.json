@@ -3,57 +3,102 @@
     {
       "id": 0,
       "title": "Lorem ipsum1",
-      "userName": "유저1", 
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "createDate": "2022/06/20",
-      "numberOfComments": 10,
-      "numberOfLikes": 10,
       "imgSrc": "/cat.webp", 
-      "postUrl": "/write"
+      "postUrl": "/write",
+      "user": {
+        "id": 0,
+        "name": "유저1",
+        "userId": "01"
+      },
+      "likeInfo": {
+        "numberOfLikes": 10,
+        "isLikeClickUser": "유저1"
+      },
+      "commentInfo": {
+        "numberOfComments": 1
+      }
     },
     {
       "id": 1,
       "title": "Lorem ipsum2",
-      "userName": "유저2", 
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "createDate": "2022/05/20",
-      "numberOfComments": 4,
-      "numberOfLikes": 2,
+      "createDate": "2022/06/20",
       "imgSrc": "/puppy.jpg", 
-      "postUrl": "/bookmark"
+      "postUrl": "/write",
+      "user": {
+        "id": 0,
+        "name": "유저2",
+        "userId": "02"
+      },
+      "likeInfo": {
+        "numberOfLikes": 5,
+        "isLikeClickUser": "유저2"
+      },
+      "commentInfo": {
+        "numberOfComments": 10
+      }
     },
     {
       "id": 2,
       "title": "Lorem ipsum3",
-      "userName": "유저3", 
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "createDate": "2022/01/20",
-      "numberOfComments": 4,
-      "numberOfLikes": 7,
-      "imgSrc": "/rabbit.jpg", 
-      "postUrl": "/mypage" 
+      "createDate": "2022/02/20",
+      "imgSrc": "/rabbit.jpg",  
+      "postUrl": "/write",
+      "user": {
+        "id": 0,
+        "name": "유저3",
+        "userId": "03"
+      },
+      "likeInfo": {
+        "numberOfLikes": 1,
+        "isLikeClickUser": "유저3"
+      },
+      "commentInfo": {
+        "numberOfComments": 20
+      }
     },
     {
       "id": 3,
       "title": "Lorem ipsum4",
-      "userName": "유저4", 
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "createDate": "2022/02/22",
-      "numberOfComments": 1,
-      "numberOfLikes": 11,
+      "createDate": "2022/01/20",
       "imgSrc": "/squirrel.jpg", 
-      "postUrl": "/mypage"
+      "postUrl": "/write",
+      "user": {
+        "id": 0,
+        "name": "유저4",
+        "userId": "04"
+      },
+      "likeInfo": {
+        "numberOfLikes": 11,
+        "isLikeClickUser": "유저4"
+      },
+      "commentInfo": {
+        "numberOfComments": 5
+      }
     },
     {
       "id": 4,
       "title": "Lorem ipsum5",
-      "userName": "유저5", 
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "createDate": "2022/03/01",
-      "numberOfComments": 1,
-      "numberOfLikes": 41,
-      "imgSrc": "/fox.jpg", 
-      "postUrl": "/mypage"
+      "createDate": "2022/02/22",
+      "imgSrc": "/fox.jpg",
+      "postUrl": "/write",
+      "user": {
+        "id": 0,
+        "name": "유저5",
+        "userId": "05"
+      },
+      "likeInfo": {
+        "numberOfLikes": 6,
+        "isLikeClickUser": "유저5"
+      },
+      "commentInfo": {
+        "numberOfComments": 8
+      }
     }
   ]
 }
