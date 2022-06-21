@@ -1,3 +1,4 @@
+import { SCREEN } from '@styles/screen';
 import styled from 'styled-components';
 
 export const CustomSelectMenuWrapper = styled.div`
@@ -19,12 +20,19 @@ export const SelectMenuWrapper = styled.div`
     width: 64px;
     height: 32px;
     background-color: ${(props) => props.theme.colors.WHITE_000};
+    font-size: ${(props) => props.theme.fontSize.PARAGRAPH3};
   }
 
   span {
     height: 32px;
     font-size: ${(props) => props.theme.fontSize.HEADING};
     background-color: ${(props) => props.theme.colors.WHITE_000};
+  }
+
+  @media all and (max-width: ${SCREEN.MOBILE_L}px) {
+    .initial-select {
+      font-size: ${(props) => props.theme.fontSize.PARAGRAPH4};
+    }
   }
 `;
 
