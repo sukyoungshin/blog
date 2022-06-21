@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { BsFillHeartFill } from 'react-icons/bs';
 import { useAPI } from '@utils/useAPI';
 
-interface IPosts {
+interface IPost {
   id: number;
   title: string;
   content: string;
@@ -24,7 +24,7 @@ interface IUser {
 };
 interface ILikeInfo {
   numberOfLikes: number;
-  isLikeClickUser: string;
+  isLikeClickUser: boolean;
 };
 interface ICommentInfo {
   numberOfComments: number;
@@ -41,7 +41,7 @@ const Card = (): ReactElement => {
     // FIXME: postUrl변경 (db.json)
     <>
     {
-      data.map((d: IPosts) => (
+      data.map((d: IPost) => (
       <Link 
         key={data ? d.id : 0}
         href={data ? d.postUrl : '/'}

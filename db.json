@@ -14,7 +14,7 @@
       },
       "likeInfo": {
         "numberOfLikes": 10,
-        "isLikeClickUser": "유저1"
+        "isLikeClickUser": false
       },
       "commentInfo": {
         "numberOfComments": 1
@@ -34,7 +34,7 @@
       },
       "likeInfo": {
         "numberOfLikes": 5,
-        "isLikeClickUser": "유저2"
+        "isLikeClickUser": false
       },
       "commentInfo": {
         "numberOfComments": 10
@@ -54,7 +54,7 @@
       },
       "likeInfo": {
         "numberOfLikes": 1,
-        "isLikeClickUser": "유저3"
+        "isLikedByOwnUser": false
       },
       "commentInfo": {
         "numberOfComments": 20
@@ -74,7 +74,7 @@
       },
       "likeInfo": {
         "numberOfLikes": 11,
-        "isLikeClickUser": "유저4"
+        "isLikedByOwnUser": false
       },
       "commentInfo": {
         "numberOfComments": 5
@@ -94,7 +94,7 @@
       },
       "likeInfo": {
         "numberOfLikes": 6,
-        "isLikeClickUser": "유저5"
+        "isLikedByOwnUser": false
       },
       "commentInfo": {
         "numberOfComments": 8
