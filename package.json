@@ -10,7 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "json": "yarn json-server --watch db.json --port 9000"
+    "json": "yarn json-server --watch db.json --port 9000",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore ."
   },
