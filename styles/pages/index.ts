@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const CardWrapper = styled.section`
   margin: 0 auto;

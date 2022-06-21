@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 export const HeaderWrapper = styled.header`
   padding: 12px 24px;
@@ -64,10 +64,10 @@ export const TabMenu = styled.div`
   height: 48px;
   min-height: 48px;
   max-height: 48px;
-  
+
   > ul {
     width: 100%;
-    
+
     display: inline-flex;
     flex-direction: row;
     align-items: center;
@@ -81,7 +81,7 @@ export const TabMenu = styled.div`
     }
   }
 `;
-  
+
 export const MenuItem = styled.li<{
   active?: boolean;
 }>`
@@ -95,8 +95,9 @@ export const MenuItem = styled.li<{
   position: relative
 
   border-bottom: 2px solid transparent;
-  ${(props) => props.active && css`
-    border-bottom: 2px solid ${(props) => props.theme.colors.NAVY};
-  `}
+  ${(props) =>
+    props.active &&
+    css`
+      border-bottom: 2px solid ${(props) => props.theme.colors.NAVY};
+    `}
 `;
-

@@ -1,7 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const CardWrapper = styled.article<{
-}>`
+export const CardWrapper = styled.article`
   margin: 16px;
   width: 320px;
   min-width: 320px;
@@ -28,17 +27,17 @@ export const ImageWrapper = styled.div`
   img {
     width: 100%;
     height: 167px;
-    background-color: rgba(255,255,255,0.2);// 이미지가 로딩되지 않았을때를 대비(Defense Code)
+    background-color: rgba(255, 255, 255, 0.2); // 이미지가 로딩되지 않았을때를 대비(Defense Code)
     border-radius: 4px 4px 0 0;
   }
 `;
-  
+
 export const ContentWrapper = styled.div`
   padding: 16px;
   width: 100%;
   height: calc(100% - 40px);
   overflow-y: auto;
-  background-color: rgba(255,255,255,0.4);// 이미지가 로딩되지 않았을때를 대비(Defense Code)
+  background-color: rgba(255, 255, 255, 0.4); // 이미지가 로딩되지 않았을때를 대비(Defense Code)
 
   h2 {
     font-size: ${(props) => props.theme.fontSize.HEADING};
@@ -72,7 +71,7 @@ export const TabMenuList = styled.ul`
 `;
 
 export const TabMenu = styled.li`
-  font-size: ${(props) => props.theme.fontSize.PARAGRAPH3};    
+  font-size: ${(props) => props.theme.fontSize.PARAGRAPH3};
 
   ul {
     margin: 16px;

@@ -1,12 +1,7 @@
-import { StyledMain } from './Main.style'
+import { StyledMain } from './Main.style';
 
 const Main = ({ children }: any) => {
-  return(
-    <StyledMain>
-      {children}
-    </StyledMain>
-  );
+  return <StyledMain>{children}</StyledMain>;
 };
 
 export default Main;
-

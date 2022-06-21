@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
-import { CardWrapper, ContentWrapper, ImageWrapper, TabMenu, TabMenuList } from "./Card.style";
-import { Button, Icon } from '@components/index'
+import { CardWrapper, ContentWrapper, ImageWrapper, TabMenu, TabMenuList } from './Card.style';
+import { Button, Icon } from '@components/index';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BsFillHeartFill } from 'react-icons/bs';
@@ -58,6 +58,7 @@ const Card = (): ReactElement => {
                 <li>
                   by{' '}
                   <strong>{d.userName}</strong>
+
                 </li>
               </ul>
             </TabMenu>
@@ -75,7 +76,7 @@ const Card = (): ReactElement => {
     }
     </>
   );
-}
+};
 
 const LikeButton = ({...props}: any): ReactElement => {
 
@@ -93,6 +94,6 @@ const LikeButton = ({...props}: any): ReactElement => {
       </span>
     </Button>
   );
-}
+};
 
 export default Card;
