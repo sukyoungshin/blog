@@ -19,8 +19,9 @@ export const SelectMenuWrapper = styled.div`
   .initial-select {
     width: 64px;
     height: 32px;
-    background-color: ${(props) => props.theme.colors.WHITE_000};
     font-size: ${(props) => props.theme.fontSize.PARAGRAPH3};
+    color: ${(props) => props.theme.colors.NAVY};
+    background-color: ${(props) => props.theme.colors.WHITE_000};
   }
 
   span {

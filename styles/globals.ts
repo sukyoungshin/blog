@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
       font-size: 62.5%;
