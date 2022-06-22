@@ -1,3 +1,4 @@
+import { SCREEN } from '@styles/screen';
 import styled, { css } from 'styled-components';
 
 export const ButtonWithText = styled.button<{
@@ -14,6 +15,10 @@ export const ButtonWithText = styled.button<{
   // active & inactive
   color: ${(props) => (props.active ? props.theme.colors.WHITE_200 : props.theme.colors.NAVY)};
   background-color: ${(props) => (props.active ? props.theme.colors.NAVY : props.theme.colors.WHITE_200)};
+
+  @media all and (max-width: ${SCREEN.MOBILE_L}px) {
+    font-size: ${(props) => props.theme.fontSize.PARAGRAPH3};
+  }
 `;
 
 export const ButtonWithSVGIcon = styled.button<{
@@ -47,6 +52,10 @@ export const ButtonWithSVGIcon = styled.button<{
     height: inherit;
     color: ${(props) => props.theme.colors.NAVY};
   }
+
+  @media all and (max-width: ${SCREEN.MOBILE_L}px) {
+    font-size: ${(props) => props.theme.fontSize.PARAGRAPH4};
+  }
 `;
 
 export const ButtonWithTextAndSVGIcon = styled.button<{
@@ -66,4 +75,8 @@ export const ButtonWithTextAndSVGIcon = styled.button<{
   font-size: ${(props) => props.theme.fontSize.PARAGRAPH3};
   background-color: transparent;
   border-radius: 4px;
+
+  @media all and (max-width: ${SCREEN.MOBILE_L}px) {
+    font-size: ${(props) => props.theme.fontSize.PARAGRAPH4};
+  }
 `;
