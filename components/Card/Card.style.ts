@@ -1,3 +1,4 @@
+import { SCREEN } from '@styles/screen';
 import styled from 'styled-components';
 
 export const CardWrapper = styled.article`
@@ -19,6 +20,11 @@ export const CardWrapper = styled.article`
   }
 
   position: relative;
+
+  @media all and (max-width: ${SCREEN.MOBILE_L}px) {
+    margin: 16px 0;
+    width: 366px;
+  }
 `;
 
 export const ImageWrapper = styled.div`
