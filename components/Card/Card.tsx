@@ -45,12 +45,12 @@ const Card = (): ReactElement => {
           <a>
             <CardWrapper>
               <ImageWrapper>
-                <Image 
-                  src={`${d.imgSrc}`} 
-                  width={320} 
-                  height={167} 
+                <Image
+                  src={`${d.imgSrc}`}
+                  width={320}
+                  height={167}
                   layout={'responsive'}
-                  alt={`${d.title} 이미지`} 
+                  alt={`${d.title} 이미지`}
                   priority
                 />
               </ImageWrapper>
