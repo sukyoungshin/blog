@@ -13,6 +13,7 @@ export const CardWrapper = styled.section`
   align-content: flex-start;
 
   @media all and (max-width: ${SCREEN.MOBILE_L}px) {
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
