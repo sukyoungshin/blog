@@ -63,7 +63,7 @@ const Card = (): ReactElement => {
 
   return (
     <>
-      {data?.postForHome?.map((post: IPost) => (
+      {data?.postForHome && data.postForHome.map((post: IPost) => (
         <Link key={post.id} href={post.postUrl}>
           <a>
             <CardWrapper>
