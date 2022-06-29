@@ -4,7 +4,7 @@ import { Button, Icon } from '@components/index';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BsFillHeartFill } from 'react-icons/bs';
-import { useAPI } from '@utils/useAPI';
+import { useQuery, gql} from '@apollo/client';
 
 interface IPost {
   id: number;
@@ -30,36 +30,59 @@ interface ICommentInfo {
   numberOfComments: number;
 }
 
-const API_URL = 'posts';
+const POSTS = gql`
+  query Query {
+    postForHome {
+      id
+      title
+      content
+      createDate
+      imgSrc
+      postUrl
+      user {
+        id
+        name
+        userId
+      }
+      likeInfo {
+        numberOfLikes
+        isLikeClickUser
+      }
+      commentInfo {
+        numberOfComments
+      }
+    }
+  }
+`;
+
 const Card = (): ReactElement => {
-  const { loading, error, data } = useAPI(API_URL);
-  if (loading) return <h1>로딩중</h1>;
-  if (error) return <h1>error</h1>;
+  const { loading, error, data } = useQuery(POSTS);
+  if (loading) return <h1>Loading...</h1>;
+  if (error) return <h1>Error! {error.message}</h1>;
   if (data === null) return <h1>data null</h1>;
 
   return (
-    // FIXME: postUrl변경 (db.json)
     <>
-      {data.map((d: IPost) => (
-        <Link key={data ? d.id : 0} href={data ? d.postUrl : '/'}>
+      {data?.postForHome && data.postForHome.map((post: IPost) => (
+        <Link key={post.id} href={post.postUrl}>
           <a>
             <CardWrapper>
               <ImageWrapper>
                 <Image
-                  src={`${d.imgSrc}`}
+                  src={`${post.imgSrc}`}
                   width={320}
                   height={167}
                   layout={'responsive'}
-                  alt={`${d.title} 이미지`}
+                  alt={`${post.title} 이미지`}
                   priority
                 />
               </ImageWrapper>
 
               <ContentWrapper>
-                <h2>{d.title.slice(0, 25)}...</h2>
-                <p>{d.content.slice(0, 115)}...</p>
+                <h2>{post.title.slice(0, 25)}...</h2>
+                <p>{post.content.slice(0, 115)}...</p>
                 <p>
-                  <span>{d.createDate}</span> <span>{d.commentInfo.numberOfComments}개의 댓글</span>
+                  <span>{post.createDate}</span> <span>{post.commentInfo.numberOfComments}개의 댓글</span>
                 </p>
               </ContentWrapper>
 
@@ -68,22 +91,22 @@ const Card = (): ReactElement => {
                   <ul>
                     <li>
                       <Image
-                        src={`${d.imgSrc}`}
+                        src={`${post.imgSrc}`}
                         width={24}
                         height={24}
                         style={{ borderRadius: '50%' }}
-                        alt={`${d.user.name}님의 프로필사진`}
+                        alt={`${post.user.name}님의 프로필사진`}
                       />
                     </li>
                     <li>
-                      by <strong>{d.user.name}</strong>
+                      by <strong>{post.user.name}</strong>
                     </li>
                   </ul>
                 </TabMenu>
 
                 <TabMenu>
                   <li>
-                    <LikeButton {...d} />
+                    <LikeButton {...post} />
                   </li>
                 </TabMenu>
               </TabMenuList>
